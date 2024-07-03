@@ -34,14 +34,14 @@ write_allcsv_from_dir_to_singleparquetfile = function(directory){
     x = df,
     sink = datapath
   )#write to WD parquet file with name of directory
-}
-
-
+}0
 
 #read file----
 df = read_parquet_asp("lsn")
+datapath = ".../asp-lsn.parquet"#indicate the right path in order to open the parquet file
+df2 = read_parquet(datapath)
 
 #write csv files from dir to single parquet file----
-for (i in 1:3){
-  write_allcsv_from_dir_to_singleparquetfile(subdir[i])
-}
+#for (i in 1:3){
+#  write_allcsv_from_dir_to_singleparquetfile(subdir[i])
+#}
